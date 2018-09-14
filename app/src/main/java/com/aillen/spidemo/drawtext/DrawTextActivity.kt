@@ -42,6 +42,7 @@ class DrawTextActivity : AppCompatActivity() {
         val list = mutableListOf<PageModel>()
         list.add(PageModel("draw文字",R.layout.practice_draw_text))
         list.add(PageModel("测量文字尺寸",R.layout.practice_measure_text_size))
+        list.add(PageModel("canvasClip",R.layout.practice_canvan_clip))
         return list
     }
 
