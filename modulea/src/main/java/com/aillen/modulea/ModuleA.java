@@ -7,6 +7,7 @@ import com.aillen.aninterface.SayHello;
  * Email： 940752944@qq.com
  */
 public class ModuleA implements SayHello {
+
     @Override
     public String sayHello() {
         return "hello i'm from moduleA";
