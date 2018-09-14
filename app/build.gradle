@@ -4,7 +4,18 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'walle'
+
 android {
+    signingConfigs {
+        config {
+            storeFile file('../keyStore.jks')
+            storePassword '111111'
+            keyAlias 'key'
+            keyPassword '111111'
+            v2SigningEnabled true
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.aillen.spidemo"
@@ -16,21 +27,43 @@ android {
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.config
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
+walle {
+    //渠道包的输出路径
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels")
+    //渠道包的APK文件名称
+    apkFileNameFormat = 'SPI-${versionName}_${buildType}_${channel}.apk'
+    //渠道配置文件
+    channelFile = new File("${project.getProjectDir()}/channel")
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:support-v4:27.1.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':interface')
     implementation project(':modulea')
     implementation project(':moduleb')
+    //美团打包
+    implementation "com.meituan.android.walle:library:${walleVersion}"
+    implementation project(':fileprovierlibrary')
+
+    implementation 'com.android.support:design:27.1.1'
 }

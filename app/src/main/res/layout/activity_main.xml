@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -13,9 +15,50 @@
         android:layout_height="wrap_content"
         android:text="call services!"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="hshshshshhshshshshshshs"/>
+    <TextView
+        android:id="@+id/tv_capture"
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        android:text="screenCapture"
+        android:layout_height="50dp"/>
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_viewPager_demo"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:layout_height="50dp"
+        android:text="viewPager"/>
+    <Button
+        android:id="@+id/btn_custom"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:layout_height="50dp"
+        android:text="自定义"/>
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_custom_paint"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:layout_height="50dp"
+        android:text="paint的使用"/>
+    <Button
+        android:id="@+id/btn_draw_text"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:layout_height="50dp"
+        android:text="drawtext的使用"/>
+
+</LinearLayout>

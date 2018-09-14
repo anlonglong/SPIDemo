@@ -1,4 +1,4 @@
-package com.aillen.spidemo;
+package com.aillen.spidemo.spi;
 
 import com.aillen.aninterface.SayHello;
 
@@ -7,6 +7,9 @@ import com.aillen.aninterface.SayHello;
  * Email： 940752944@qq.com
  */
 public class AppModule implements SayHello {
+
+
+
     @Override
     public String sayHello() {
         return "hello i'm from appmodule";

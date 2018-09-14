@@ -1,4 +1,6 @@
-package com.aillen.spidemo;
+package com.aillen.spidemo.spi;
+
+import com.aillen.spidemo.spi.IRun;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
